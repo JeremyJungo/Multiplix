@@ -9,7 +9,7 @@ require "model/model.php";
 
 function home()
 {
-	require "../views/view_home.php";
+	require "views/view_home.php";
 }
 
 //----------------------------------------------------------------------\\

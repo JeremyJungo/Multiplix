@@ -7,20 +7,19 @@
 ?>
 <!DOCTYPE HTML>
 <html>
-    <header>
+	<head>
         <meta charset="utf-8">
-        <title><?=$titre;?></title>
-    </header>
-    <body id="background">
-        <div>
-            <a href="#"><img src="style/prictures/Logo" class="logo"></a>
-
-            <!--__________CONTENT__________-->
-            <div>
-                <?=$contenu; //All views will be displayed here?>
-            </div>
-            <!--________END OF CONTENT________-->
-			
+		<title><?=$titre;?></title>
+		<link href="style/multiplix.css" rel="stylesheet">
+    </head>
+    <body>
+		<div class="Container">
+        	<a href="#"><img src="style/pictures/Logo.png"></a>
+			<!--__________CONTENT__________-->
+			<div>
+				<?=$contenu; //All views will be displayed here?>
+			</div>
+			<!--________END OF CONTENT________-->
         </div>
     </body>
 </html>
