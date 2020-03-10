@@ -13,8 +13,8 @@
 		<link href="style/multiplix.css" rel="stylesheet">
     </head>
     <body>
-		<div class="Container">
-        	<a href="#"><img src="style/pictures/Logo.png"></a>
+		<div class="container">
+        	<a href="#"><img src="style/pictures/Logo.png" class="logo"></a>
 			<!--__________CONTENT__________-->
 			<div>
 				<?=$contenu; //All views will be displayed here?>

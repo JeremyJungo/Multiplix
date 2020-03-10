@@ -15,6 +15,12 @@ try{
             case 'view_home':
                 home();
                 break;
+            case 'login':
+                login();
+                break;
+            case  'register' :
+                register();
+                break;
 //-------------- - -----------------\\
             default :
                 throw new Exception("action non valide");

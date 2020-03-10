@@ -1,11 +1,26 @@
-body
-{
-  background-color: silver
+/*
+ *	User: Jeremy.JUNGO
+ *	Date: 05.03.2020
+ *	multiplix.css: css created all by Jeremy for the Web App Multiplix
+ */
+
+/*
+======= CSS for gabarit =======
+*/
+body {
+	background-color: silver;
+}
+.logo{
+	width: 100%;
+}
+div.container {
+	background-color: white;
+	margin-top: 0px;
+	border: 1px solid black;
+	width: 650px;
+	height: auto;
 }
 
-.container
-{
-	width: 650;
-	margin-left: auto;
-	margin-right: auto;
-}
+/*
+======= CSS view_home =======
+*/
