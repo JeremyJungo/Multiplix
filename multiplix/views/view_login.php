@@ -29,5 +29,5 @@ $titre="Multiplix";
 </article>
 <?php
 $contenu = ob_get_clean(); //stocke dans la variable
-require  "views/gabarit.php";
+require  "views/layout.php";
 ?>

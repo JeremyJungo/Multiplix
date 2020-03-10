@@ -21,7 +21,8 @@ function register()
 }
 
 //----------------------------------------------------------------------\\
-function error($e){
+function error($e)
+{
     require "views";
 }
 ?>
