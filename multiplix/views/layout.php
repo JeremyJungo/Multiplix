@@ -2,7 +2,7 @@
 /**
  * User: Jeremy.JUNGO
  * Date: 27.02.2020
- * gabarit.php :
+ * layout.php : it's the default layout for the web app
  */
 ?>
 <!DOCTYPE HTML>
@@ -14,10 +14,10 @@
     </head>
     <body>
 		<div class="container">
-        	<a href="#"><img src="style/pictures/Logo.png" class="logo"></a>
+        	<a href="index.php?action=goHome"><img src="style/pictures/Logo.png" class="logo"></a>
 			<!--__________CONTENT__________-->
 			<div>
-				<?=$contenu; //All views will be displayed here?>
+				<?=$content; //All views will be displayed here?>
 			</div>
 			<!--________END OF CONTENT________-->
         </div>

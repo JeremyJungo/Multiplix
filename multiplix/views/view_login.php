@@ -9,25 +9,37 @@ ob_start(); //"open" the buffer
 $titre="Multiplix";
 ?>
 <article>
-    <form method="post" action="index.php?action=#">
+    <form method="post" action="index.php?action=login">
         <table class="table">
             <tr>
                 <td>
-                    <input type="text" placeholder="pseudonyme">
+                    <?php
+                    if (isset($_GET['error'])&&($_GET['error'] == 'username')){
+                        echo '<input type="text" name="Fusername" placeholder="pseudonyme" required>';
+                    }else{
+                        echo '<input type="text" name="Fusername" placeholder="pseudonyme" required>';
+                    }
+                    ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="password" placeholder="mot de passe">
+                    <?php
+                    if (isset($_GET['error'])&&($_GET['error'] == 'password')){
+                        echo '<input type="password" name="Fpassword" placeholder="mot de passe" required>';
+                    }else{
+                        echo '<input type="password" name="Fpassword" placeholder="mot de passe" required>';
+                    }
+                    ?>
                 </td>
             </tr>
             <tr>
-                <td><input type="submit" value="Se connecter"></td>
+                <td><input type="submit" value="Se connecter" class="button"></td>
             </tr>
         </table>
     </form>
 </article>
 <?php
-$contenu = ob_get_clean(); //stocke dans la variable
+$content = ob_get_clean(); //stocke dans la variable
 require  "views/layout.php";
 ?>

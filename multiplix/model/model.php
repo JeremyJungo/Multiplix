@@ -9,10 +9,24 @@
 function getDB()
 {
 	//connexion with DB
-	$connexion = new PDO('mysql:host=localhost;dbname=multilix','root', '');
+	$connexion = new PDO('mysql:host=localhost;dbname=db_multiplix','root', '');
 	//errors when connexion with DB
 	$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $connexion;
 	
+}
+
+// Get login
+function getLogin($post)
+{
+    //connecte to BD
+    $connexion = getBD();
+    //request
+    $request = "SELECT `username`, `userpswd` FROM `users`";
+    //run the request
+    $results = $connexion->query($request);
+
+    //return results
+    return $results;
 }
 ?>

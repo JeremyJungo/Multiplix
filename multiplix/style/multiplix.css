@@ -5,7 +5,7 @@
  */
 
 /*
-======= CSS for gabarit =======
+======= CSS for layout =======
 */
 body {
 	background-color: silver;
@@ -18,9 +18,15 @@ div.container {
 	margin-top: 0px;
 	border: 1px solid black;
 	width: 650px;
-	height: auto;
+	height: 900px;
 }
 
 /*
-======= CSS view_home =======
+======= CSS view =======
 */
+.button{
+	text-align: center;
+}
+
+
+

@@ -13,25 +13,25 @@ $titre="Multiplix";
         <table class="table">
             <tr>
                 <td>
-                    <input type="text" placeholder="prénom">
+                    <input type="text" name="ffirstname" placeholder="prénom">
                 </td>
                 <td>
-                    <input type="text" placeholder="nom">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" placeholder="pseudonyme">
+                    <input type="text" name="flastname" placeholder="nom">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="password" placeholder="mot de passe">
+                    <input type="text" name="fusername" placeholder="pseudonyme">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="password" placeholder="confirmer le mot de passe">
+                    <input type="password" name="fpassword" placeholder="mot de passe">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="confirme le mot de passe">
                 </td>
             </tr>
             <tr>
@@ -41,6 +41,6 @@ $titre="Multiplix";
     </form>
 </article>
 <?php
-$contenu = ob_get_clean(); //stocke dans la variable
+$content = ob_get_clean(); //stocke dans la variable
 require  "views/layout.php";
 ?>

@@ -12,20 +12,26 @@ try{
     if(isset($_GET['action'])){
         $action = $_GET['action'];
         switch($action){
-            case 'view_home':
-                home();
+            case 'goHome':
+                goHome();
+                break;
+            case 'goLogin':
+                goLogin();
                 break;
             case 'login':
                 login();
                 break;
-            case  'register' :
-                register();
+            case  'goRegister':
+                goRegister();
                 break;
+            case 'register':
+                register();
+                Break;
 //-------------- - -----------------\\
             default :
                 throw new Exception("action non valide");
         }
-    }else home();
+    }else goHome();
 }catch(Exception $e){
     error ($e->getMessage());
 }

@@ -12,10 +12,10 @@ $titre="Multiplix";
     <div>
         <p>reviser les livrets de 1 à 12</p>
     </div>
-        <a href="index.php?action=login"><button type="button">Se connecter</button></a>
-        <a href="index.php?action=register"><button type="button">S'inscrire</button></a>
+        <a href="index.php?action=goLogin"><input type="button" value="Se connecter"></a>
+        <a href="index.php?action=goRegister"><input type="button" value="S'inscrire"></a>
 </article>
 <?php
-$contenu = ob_get_clean(); //stocke dans la variable
+$content = ob_get_clean(); //stocke dans la variable
 require  "views/layout.php";
 ?>
