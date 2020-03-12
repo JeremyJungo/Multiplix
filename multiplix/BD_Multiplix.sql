@@ -8,6 +8,9 @@
 CREATE DATABASE IF NOT EXISTS db_multiplix;
 USE db_multiplix;
 
+-- user to use the DB
+CREATE USER 'multiplix'@'localhost' IDENTIFIED WITH mysql_native_password AS '20lWPsXVnWOfpCdO';GRANT ALL PRIVILEGES ON *.* TO 'multiplix'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;GRANT ALL PRIVILEGES ON `db_multiplix`.* TO 'multiplix'@'localhost';
+
 -- Table's structure`users`
 CREATE TABLE IF NOT EXISTS `db_multiplix`.`users` ( 
 `id_user` INT NOT NULL AUTO_INCREMENT , 
@@ -16,6 +19,9 @@ CREATE TABLE IF NOT EXISTS `db_multiplix`.`users` (
 `username` VARCHAR(15) NOT NULL , 
 `userpswd` VARCHAR(255) NOT NULL , 
 PRIMARY KEY (`id_user`));
+
+-- User for tests
+INSERT INTO `users` (`id_user`, `firstname`, `lastname`, `username`, `userpswd`) VALUES (NULL, 'Jeremy', 'Jungo', 'jeremy', '1234');
 
 -- Table's structure 'mods'
 CREATE TABLE IF NOT EXISTS `db_multiplix`.`mods` ( 

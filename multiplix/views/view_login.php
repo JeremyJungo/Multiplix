@@ -14,10 +14,10 @@ $titre="Multiplix";
             <tr>
                 <td>
                     <?php
-                    if (isset($_GET['error'])&&($_GET['error'] == 'username')){
-                        echo '<input type="text" name="Fusername" placeholder="pseudonyme" required>';
+                    if (isset($_GET['error']) && $_GET['error'] == 'user'){
+                        echo '<input type="text" name="Lusername" placeholder="pseudonyme" required>';
                     }else{
-                        echo '<input type="text" name="Fusername" placeholder="pseudonyme" required>';
+                        echo '<input type="text" name="Lusername" placeholder="pseudonyme" required>';
                     }
                     ?>
                 </td>
@@ -25,10 +25,10 @@ $titre="Multiplix";
             <tr>
                 <td>
                     <?php
-                    if (isset($_GET['error'])&&($_GET['error'] == 'password')){
-                        echo '<input type="password" name="Fpassword" placeholder="mot de passe" required>';
+                    if (isset($_GET['error']) && $_GET['error'] == 'password'){
+                        echo '<input type="password" name="Lpassword" placeholder="mot de passe" required>';
                     }else{
-                        echo '<input type="password" name="Fpassword" placeholder="mot de passe" required>';
+                        echo '<input type="password" name="Lpassword" placeholder="mot de passe" required>';
                     }
                     ?>
                 </td>

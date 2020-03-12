@@ -18,4 +18,5 @@ $titre="Multiplix";
 <?php
 $content = ob_get_clean(); //stocke dans la variable
 require  "views/layout.php";
+session_destroy();
 ?>

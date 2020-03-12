@@ -15,11 +15,15 @@ try{
             case 'goHome':
                 goHome();
                 break;
+//-------------- Login, Register / Logout -----------------\\
             case 'goLogin':
                 goLogin();
                 break;
             case 'login':
                 login();
+                break;
+            case 'logout':
+                logout();
                 break;
             case  'goRegister':
                 goRegister();
@@ -27,6 +31,13 @@ try{
             case 'register':
                 register();
                 Break;
+//-------------- Statistics -----------------\\
+            case 'overallStatistics':
+                overallStatistics();
+                break;
+            case 'gameStatistics':
+                gameStatistics();
+                break;
 //-------------- - -----------------\\
             default :
                 throw new Exception("action non valide");
@@ -35,3 +46,4 @@ try{
 }catch(Exception $e){
     error ($e->getMessage());
 }
+?>
