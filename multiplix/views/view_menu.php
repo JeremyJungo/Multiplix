@@ -16,8 +16,8 @@ $titre="Multiplix";
     </div>
     <div>
         <h3>Nouvelles parties</h3>
-        <a href="#"><input type="button" value="Mode guidé" class="button"></a>
-        <a href="#"><input type="button" value="Mode 5 secondes" class="button"></a>
+        <a href="index.php?action=guided-mod"><input type="button" value="Mode guidé" class="button"></a>
+        <a href="index.php?action=5secondmod"><input type="button" value="Mode 5 secondes" class="button"></a>
     </div>
 </article>
 <?php

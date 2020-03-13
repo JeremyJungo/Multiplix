@@ -38,6 +38,13 @@ try{
             case 'gameStatistics':
                 gameStatistics();
                 break;
+//-------------- Games -----------------\\
+            case 'guided-mod':
+                guidedmod();
+                break;
+            case '5secondmod':
+                fivesecondmod();
+                break;
 //-------------- - -----------------\\
             default :
                 throw new Exception("action non valide");

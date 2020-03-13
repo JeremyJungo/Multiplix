@@ -26,6 +26,7 @@ function goLogin()
 //The function login checks the values to connect a user
 function login()
 {
+    //optimiser svp
     extract ($_POST);
     //if the login is empty
     if (empty($Lusername)) {
@@ -78,15 +79,12 @@ function goRegister()
 //The function register insert new user in the DB
 function register()
 {
-    //extract to compare value with the DB
-    extract ($_POST);
-    $username=$Rusername;
-
-    $users=getLogin($_POST);
-    $user=$users->fetch();
-
-    if ($Rusername == $user) {
-        newregister();
+    $users = newgetLogin($_POST);
+    if(isset($users)){
+        require "views/view_register.php";
+    } else {
+        newregister($_POST);
+        require "views/view_login.php";
     }
 }
 
@@ -102,6 +100,13 @@ function gameStatistics()
     require  "views/view_gamestatistics.php";
 }
 
+//----------------------------------- Games -----------------------------------\\
+function guidedmod(){
+
+}
+function fivesecondmod(){
+
+}
 //----------------------------------- Errors -----------------------------------\\
 function error($e)
 {

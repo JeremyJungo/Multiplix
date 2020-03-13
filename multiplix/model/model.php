@@ -17,7 +17,7 @@ function getDB()
 }
 
 // Get login
-function getLogin ($post)
+function getLogin ()
 {
     //connecte to BD
     $connexion = getDB();
@@ -30,13 +30,27 @@ function getLogin ($post)
     return $users;
 }
 
-function newregister($post)
+// Get login
+function newgetLogin ($post)
 {
     //connecte to BD
     $connexion = getDB();
+    //request
+    $request="SELECT * FROM users where username ='".$_POST['username']."';";
+    //run the request
+    $users = $connexion->query($request);
+    echo $request;
+    var_dump($users);
+    //return results
+    return $users;
+}
 
+function newregister()
+{
+    //connecte to BD
+    $connexion = getDB();
     //Add new user
-    $request = "INSERT INTO `user`(id_user,firstname,lastname,username,userpswd);";
+    $request = "INSERT INTO `users` (id_user,firstname,lastname,username,userpswd) VALUES ('','".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['username']."','".$_POST['password']."');";
     $connexion->exec($request);
 }
 ?>
