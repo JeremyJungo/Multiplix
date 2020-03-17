@@ -1,0 +1,13 @@
+PHPStorm
+https://www.jetbrains.com/phpstorm/download/#section=windows
+
+PHP-7.2
+https://windows.php.net/download#php-7.2
+
+Xdebug
+https://xdebug.org/download
+
+MySQL :
+https://dev.mysql.com/downloads/installer/
+
+aider par Dorian le 17.03.2020

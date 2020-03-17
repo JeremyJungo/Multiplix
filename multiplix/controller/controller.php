@@ -29,9 +29,9 @@ function login()
     //optimiser svp
     extract ($_POST);
     //if the login is empty
-    if (empty($Lusername)) {
+    if (empty($username)) {
         //and password isn't empty
-        if (!empty($Lpassword)) {
+        if (!empty($password)) {
             require "views/view_login.php"; //error login is empty
         }
         else {
@@ -40,7 +40,7 @@ function login()
     }
     else {
         //if the password is empty
-        if (empty ($Lpassword)) {
+        if (empty ($password)) {
             require "views/view_login.php"; //error password is empty
         }
         else {
@@ -49,14 +49,14 @@ function login()
             $user=$users->fetch();
 
             //checks the value entered with DB values
-            if($Lusername != $user['username']){
+            if($username != $user['username']){
                 require "views/view_login.php"; //error login is false
             }
             else {
-                if ($Lpassword != $user['userpswd']) {
+                if ($password != $user['userpswd']) {
                     require "views/view_login.php"; //error password is false
                 } else {
-                    $_SESSION['login']= $Lusername;
+                    $_SESSION['login']= $username;
                     require "views/view_menu.php";
                 }
             }
