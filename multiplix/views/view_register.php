@@ -26,12 +26,12 @@ $titre="Multiplix";
             </tr>
             <tr>
                 <td>
-                    <input type="password" name="password" id="pass1" placeholder="mot de passe" required>
+                    <input type="password" name="userpswd" id="pass1" placeholder="mot de passe" required>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="password" name="password2" id="pass2" placeholder="confirme le mot de passe" required>
+                    <input type="password" name="userpswd2" id="pass2" placeholder="confirme le mot de passe" required>
                 </td>
             </tr>
             <tr>

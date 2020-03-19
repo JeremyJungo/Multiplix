@@ -10,14 +10,15 @@
 function getDB()
 {
 	//connexion with DB
-	$connexion = new PDO('mysql:host=localhost;dbname=db_multiplix', 'root', '');
+	$connexion = new PDO('mysql:host=localhost;dbname=db_multiplix', 'root', 'Ghfew_1460T'); //mot de passe en clair
 	//errors when connexion with DB
 	$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $connexion;
 }
 
 // Get login
-function getLogin ()
+/*
+function getLogin ($post)
 {
     //connecte to BD
     $connexion = getDB();
@@ -28,10 +29,10 @@ function getLogin ()
 
     //return results
     return $users;
-}
+}*/
 
 // Get login
-function newgetLogin ($post)
+function getLogin ($post)
 {
     //connecte to BD
     $connexion = getDB();

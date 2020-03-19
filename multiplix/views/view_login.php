@@ -26,9 +26,9 @@ $titre="Multiplix";
                 <td>
                     <?php
                     if (isset($_GET['error']) && $_GET['error'] == 'password'){
-                        echo '<input type="password" name="password" placeholder="mot de passe" required>';
+                        echo '<input type="password" name="userpswd" placeholder="mot de passe" required>';
                     }else{
-                        echo '<input type="password" name="password" placeholder="mot de passe" required>';
+                        echo '<input type="password" name="userpswd" placeholder="mot de passe" required>';
                     }
                     ?>
                 </td>

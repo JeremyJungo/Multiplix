@@ -27,39 +27,15 @@ function goLogin()
 function login()
 {
     //optimiser svp
-    extract ($_POST);
-    //if the login is empty
-    if (empty($username)) {
-        //and password isn't empty
-        if (!empty($password)) {
-            require "views/view_login.php"; //error login is empty
-        }
-        else {
-            require "views/view_login.php"; //error all is empty
-        }
-    }
-    else {
-        //if the password is empty
-        if (empty ($password)) {
-            require "views/view_login.php"; //error password is empty
-        }
-        else {
-            //get data users
-            $users=getLogin($_POST);
-            $user=$users->fetch();
-
-            //checks the value entered with DB values
-            if($username != $user['username']){
-                require "views/view_login.php"; //error login is false
-            }
-            else {
-                if ($password != $user['userpswd']) {
-                    require "views/view_login.php"; //error password is false
-                } else {
-                    $_SESSION['login']= $username;
-                    require "views/view_menu.php";
-                }
-            }
+    $users=getLogin($_POST);
+    if($_POST['username'] != $users['username']){
+        require "views/view_login.php"; //error login is false
+    } else {
+        if ($_POST['userpswd']  != $users['userpswd']) {
+            require "views/view_login.php"; //error password is false
+        } else {
+            $_SESSION['login']= $_POST['username'];
+            require "views/view_menu.php";
         }
     }
 }
@@ -79,7 +55,7 @@ function goRegister()
 //The function register insert new user in the DB
 function register()
 {
-    $users = newgetLogin($_POST);
+    $users=getLogin($_POST);
     if(isset($users)){
         require "views/view_register.php";
     } else {
