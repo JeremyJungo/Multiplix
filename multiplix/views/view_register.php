@@ -54,5 +54,5 @@ $titre="Multiplix";
 </script>
 <?php
 $content = ob_get_clean(); //stocke dans la variable
-require  "views/layout.php";
+require "views/layout.php";
 ?>

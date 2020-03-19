@@ -10,8 +10,8 @@ USE db_multiplix;
 
 -- user to use the DB
 -- CREATE USER 'multiplix'@'localhost' IDENTIFIED WITH mysql_native_password AS '20lWPsXVnWOfpCdO'; GRANT ALL PRIVILEGES ON *.* TO 'multiplix'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;GRANT ALL PRIVILEGES ON `db_multiplix`.* TO 'multiplix'@'localhost';
-CREATE USER 'multiplix'@'localhost' ;GRANT ALL PRIVILEGES ON `db_multiplix`.* TO 'multiplix'@'localhost' IDENTIFIED BY '20lWPsXVnWOfpCdO';
-flush privileges;
+-- CREATE USER 'multiplix'@'localhost' ;GRANT ALL PRIVILEGES ON `db_multiplix`.* TO 'multiplix'@'localhost' IDENTIFIED BY '20lWPsXVnWOfpCdO';
+-- flush privileges;
 
 -- Table's structure`users`
 CREATE TABLE IF NOT EXISTS `db_multiplix`.`users` ( 
@@ -29,14 +29,33 @@ INSERT INTO `users` (`id_user`, `firstname`, `lastname`, `username`, `userpswd`)
 CREATE TABLE IF NOT EXISTS `db_multiplix`.`mods` ( 
 `id_mods` INT NOT NULL AUTO_INCREMENT , 
 `modname` VARCHAR(50) NOT NULL , 
-`rules` TEXT NOT NULL , 
+`rules` TEXT , 
 PRIMARY KEY (`id_mods`));
+
+-- mods availables
+INSERT INTO `mods` (`id_mods`, `modname`, `rules` ) VALUES (NULL, 'mode guidé', NULL);
+INSERT INTO `mods` (`id_mods`, `modname`, `rules` ) VALUES (NULL, 'mode 5 secondes', NULL);
 
 -- Table's structure 'numbers'
 CREATE TABLE IF NOT EXISTS `db_multiplix`.`numbers` ( 
 `id_number` INT NOT NULL AUTO_INCREMENT , 
 `number` INT NOT NULL , 
 PRIMARY KEY (`id_number`));
+
+-- numbers availables
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 1);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 2);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 3);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 4);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 5);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 6);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 7);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 8);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 9);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 10);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 11);
+INSERT INTO `numbers` (`id_number`, `number` ) VALUES (NULL, 12);
+
 
 -- Table's structure 'operations'
 CREATE TABLE IF NOT EXISTS `db_multiplix`.`operations` ( 

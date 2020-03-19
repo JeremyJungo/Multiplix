@@ -26,7 +26,6 @@ function goLogin()
 //The function login checks the values to connect a user
 function login()
 {
-    //optimiser svp
     $users=getLogin($_POST);
     if($_POST['username'] != $users['username']){
         require "views/view_login.php"; //error login is false
@@ -77,11 +76,28 @@ function gameStatistics()
 }
 
 //----------------------------------- Games -----------------------------------\\
-function guidedmod(){
-
+//The function allows you to start a guided game and choose the numbers
+function guidedmode(){
+    $GLOBALS['mode']=1;
+    require "views/view_choicenumber.php";
 }
-function fivesecondmod(){
 
+//The function allows you to start a five seconds game and choose the numbers
+function fivesecondmode(){
+    $GLOBALS['mode']=2;
+    require "views/view_choicenumber.php";
+}
+
+//The function checks the game mode to redirect to the correct part
+//Get the number to go start the game
+function play(){
+    if ($GLOBALS['mode']=1){
+        require "views/view_playguidedmode.php";
+    } elseif ($GLOBALS['mode']=2){
+        require "views/view_playfivesecondsmode.php";
+    } else {
+        require "views/view_home.php";
+    }
 }
 //----------------------------------- Errors -----------------------------------\\
 function error($e)

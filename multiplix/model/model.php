@@ -17,21 +17,6 @@ function getDB()
 }
 
 // Get login
-/*
-function getLogin ($post)
-{
-    //connecte to BD
-    $connexion = getDB();
-    //request
-    $request = "SELECT username, userpswd FROM users;";
-    //run the request
-    $users = $connexion->query($request);
-
-    //return results
-    return $users;
-}*/
-
-// Get login
 function getLogin ($post)
 {
     //connecte to BD

@@ -39,11 +39,14 @@ try{
                 gameStatistics();
                 break;
 //-------------- Games -----------------\\
-            case 'guided-mod':
-                guidedmod();
+            case 'guided-mode':
+                guidedmode();
                 break;
-            case '5secondmod':
-                fivesecondmod();
+            case '5secondmode':
+                fivesecondmode();
+                break;
+            case 'play':
+                play();
                 break;
 //-------------- - -----------------\\
             default :
