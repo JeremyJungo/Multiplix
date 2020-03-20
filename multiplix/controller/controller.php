@@ -24,16 +24,15 @@ function goLogin()
     require "views/view_login.php";
 }
 //The function login checks the values to connect a user
-function login()
-{
-    $users=getLogin($_POST);
-    if($_POST['username'] != $users['username']){
+function login($post){
+    $users=getLogin($post);
+    if($post['username']!=$users['username']){
         require "views/view_login.php"; //error login is false
     } else {
-        if ($_POST['userpswd']  != $users['userpswd']) {
+        if ($post['userpswd']!=$users['userpswd']) {
             require "views/view_login.php"; //error password is false
         } else {
-            $_SESSION['login']= $_POST['username'];
+            $_SESSION['login']=$post['username'];
             require "views/view_menu.php";
         }
     }
@@ -52,13 +51,13 @@ function goRegister()
 }
 
 //The function register insert new user in the DB
-function register()
+function register($post)
 {
-    $users=getLogin($_POST);
+    $users=getLogin($post);
     if(isset($users)){
         require "views/view_register.php";
     } else {
-        newregister($_POST);
+        newregister($post);
         require "views/view_login.php";
     }
 }
@@ -78,30 +77,36 @@ function gameStatistics()
 //----------------------------------- Games -----------------------------------\\
 //The function allows you to start a guided game and choose the numbers
 function guidedmode(){
-    $GLOBALS['mode']=1;
+    //Sets the game mode
+    $_SESSION['mode']=1;
     require "views/view_choicenumber.php";
 }
 
 //The function allows you to start a five seconds game and choose the numbers
 function fivesecondmode(){
-    $GLOBALS['mode']=2;
+    //Sets the game mode
+    $_SESSION['mode']=2;
     require "views/view_choicenumber.php";
 }
 
 //The function checks the game mode to redirect to the correct part
 //Get the number to go start the game
-function play(){
-    if ($GLOBALS['mode']=1){
+function play($post){
+    if (isset($_SESSION['mode'])== 1){
+        $alea = rand(1,12);
+        $_SESSION['result']=$post['number'] * $alea;
+        $_SESSION['calculation'] = $post['number']." * ".$alea." = _____";
         require "views/view_playguidedmode.php";
-    } elseif ($GLOBALS['mode']=2){
-        require "views/view_playfivesecondsmode.php";
+    } elseif (isset($_SESSION['mode'])== 2) {
+            require "views/view_playfivesecondsmode.php";
     } else {
-        require "views/view_home.php";
+        echo isset($_SESSION['mode']);
     }
 }
+
 //----------------------------------- Errors -----------------------------------\\
 function error($e)
 {
     //require "views";
 }
-?>
+

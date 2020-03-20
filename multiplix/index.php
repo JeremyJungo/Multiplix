@@ -20,7 +20,7 @@ try{
                 goLogin();
                 break;
             case 'login':
-                login();
+                login($_POST);
                 break;
             case 'logout':
                 logout();
@@ -29,7 +29,7 @@ try{
                 goRegister();
                 break;
             case 'register':
-                register();
+                register($_POST);
                 Break;
 //-------------- Statistics -----------------\\
             case 'overallStatistics':
@@ -46,7 +46,7 @@ try{
                 fivesecondmode();
                 break;
             case 'play':
-                play();
+                play($_POST);
                 break;
 //-------------- - -----------------\\
             default :
@@ -56,4 +56,3 @@ try{
 }catch(Exception $e){
     error ($e->getMessage());
 }
-?>
