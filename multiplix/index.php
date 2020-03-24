@@ -48,6 +48,9 @@ try{
             case 'play':
                 play($_POST);
                 break;
+            case 'checkanswer':
+                checkanswer($_POST);
+                break;
 //-------------- - -----------------\\
             default :
                 throw new Exception("action non valide");

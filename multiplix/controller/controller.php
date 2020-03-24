@@ -98,12 +98,35 @@ function play($post){
         $_SESSION['calculation'] = $post['number']." * ".$alea." = _____";
         require "views/view_playguidedmode.php";
     } elseif (isset($_SESSION['mode'])== 2) {
-            require "views/view_playfivesecondsmode.php";
+        //Aleatoire multiplicator
+        $alea = rand(1,12);
+        //Define the number
+        $_SESSION['number']=$post['number'];
+        $_SESSION['alea']=$alea;
+        $_SESSION['result']=$post['number'] * $alea;
+        $_SESSION['calculation'] = $post['number']." * ".$alea." = _____";
+        require "views/view_playfivesecondsmode.php";
     } else {
         echo isset($_SESSION['mode']);
+        require "views/view_home.php";
     }
 }
-
+function checkanswer($post){
+    if (isset($_SESSION['mode'])== 1){
+        checkvalue($post);
+        require "views/view_answerguidedmode.php";
+    } elseif (isset($_SESSION['mode'])== 2) {
+        checkvalue($post);
+        require "views/view_answerfivesecondsmode.php";
+    }
+    function checkvalue($post){
+        if($_SESSION['result']==$post['answer']){
+            $_SESSION['message']="Bravo";
+        } else {
+            $_SESSION['message']="Bravo";
+        }
+    }
+}
 //----------------------------------- Errors -----------------------------------\\
 function error($e)
 {

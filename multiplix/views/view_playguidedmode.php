@@ -20,9 +20,11 @@ $titre="Multiplix";
         <input type="text" value="<?=$_SESSION['calculation'];?>">
     </div>
     <div>
-        <a href="index.php?action=#"><input type="button" value="<?=$_SESSION['result']; ?>"></a><a href="index.php?action=#"><input type="button" value=""></a>
-        <br>
-        <a href="index.php?action=#"><input type="button" value=""></a><a href="index.php?action=#"><input type="button" value=""></a>
+        <form action="index.php?action=checkanswer" method="post">
+            <input type="button" name="answer" value="<?=$_SESSION['result']; ?>"><input type="button" name="answer" value="<?=$_SESSION['result']-$_SESSION['number']; ?>">
+            <br>
+            <input type="button" name="answer" value="<?=$_SESSION['result']+$_SESSION['number']; ?>"><input type="button" name="answer" value="<?=$_SESSION['result']+$_SESSION['alea']; ?>">
+        </form>
     </div>
 </article>
 <?php
