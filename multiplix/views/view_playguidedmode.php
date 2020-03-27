@@ -17,13 +17,13 @@ $titre="Multiplix";
         <a href="index.php?action=goHome"><input type="button" value="X"></a>
     </div>
     <div>
-        <input type="text" value="<?=$_SESSION['calculation'];?>">
+        <input type="text" value="<?=$_SESSION['calculation']; ?>">
     </div>
     <div>
         <form action="index.php?action=checkanswer" method="post">
-            <input type="button" name="answer" value="<?=$_SESSION['result']; ?>"><input type="button" name="answer" value="<?=$_SESSION['result']-$_SESSION['number']; ?>">
+            <input type="submit" name="answer" value="<?=$_SESSION['result']; ?>"><input type="submit" name="answer" value="5">
             <br>
-            <input type="button" name="answer" value="<?=$_SESSION['result']+$_SESSION['number']; ?>"><input type="button" name="answer" value="<?=$_SESSION['result']+$_SESSION['alea']; ?>">
+            <input type="submit" name="answer" value="5"><input type="submit" name="answer" value="5">
         </form>
     </div>
 </article>

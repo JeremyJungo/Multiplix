@@ -48,6 +48,9 @@ try{
             case 'play':
                 play($_POST);
                 break;
+            case 'playingguidedmode':
+                playingguidedmode();
+                break;
             case 'checkanswer':
                 checkanswer($_POST);
                 break;

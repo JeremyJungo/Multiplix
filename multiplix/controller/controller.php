@@ -17,26 +17,25 @@ function goHome()
         require "views/view_menu.php";
     }
 }
+
 //----------------------------------- Login / Logout -----------------------------------\\
 //The function goLogin redirects to the login page
 function goLogin()
 {
     require "views/view_login.php";
 }
+
 //The function login checks the values to connect a user
 function login($post){
     $users=getLogin($post);
-    if($post['username']!=$users['username']){
-        require "views/view_login.php"; //error login is false
+    if(isset($users)==true){
+        $_SESSION['login']=$post['username'];
+        require "views/view_menu.php";
     } else {
-        if ($post['userpswd']!=$users['userpswd']) {
-            require "views/view_login.php"; //error password is false
-        } else {
-            $_SESSION['login']=$post['username'];
-            require "views/view_menu.php";
-        }
+        require "views/view_login.php"; //error login/password is false
     }
 }
+
 //The function logout disconnect te user and go back to home
 function logout()
 {
@@ -54,8 +53,9 @@ function goRegister()
 function register($post)
 {
     $users=getLogin($post);
-    if(isset($users)){
-        require "views/view_register.php";
+    //Change the controle of the username
+    if(isset($users)==$post['username']){
+        require "views/view_register.php"; //the user is existing
     } else {
         newregister($post);
         require "views/view_login.php";
@@ -68,6 +68,7 @@ function overallStatistics()
 {
     require "views/view_overallstatistics.php";
 }
+
 //The function overallStatistics redirects to the game statistics page for the user
 function gameStatistics()
 {
@@ -79,6 +80,7 @@ function gameStatistics()
 function guidedmode(){
     //Sets the game mode
     $_SESSION['mode']=1;
+    $_SESSION['Ncalculation']=0;
     require "views/view_choicenumber.php";
 }
 
@@ -92,41 +94,53 @@ function fivesecondmode(){
 //The function checks the game mode to redirect to the correct part
 //Get the number to go start the game
 function play($post){
-    if (isset($_SESSION['mode'])== 1){
-        $alea = rand(1,12);
-        $_SESSION['result']=$post['number'] * $alea;
-        $_SESSION['calculation'] = $post['number']." * ".$alea." = _____";
-        require "views/view_playguidedmode.php";
-    } elseif (isset($_SESSION['mode'])== 2) {
+    if (isset($_SESSION['mode'])==1){
         //Aleatoire multiplicator
-        $alea = rand(1,12);
+        $alea=rand(1,12);
         //Define the number
         $_SESSION['number']=$post['number'];
-        $_SESSION['alea']=$alea;
+        //add in session the calculation and result
         $_SESSION['result']=$post['number'] * $alea;
-        $_SESSION['calculation'] = $post['number']." * ".$alea." = _____";
+        $_SESSION['calculation']=$post['number']." * ".$alea." = _____";
+        require "views/view_playguidedmode.php";
+    } elseif (isset($_SESSION['mode'])==2) {
         require "views/view_playfivesecondsmode.php";
     } else {
-        echo isset($_SESSION['mode']);
         require "views/view_home.php";
     }
 }
-function checkanswer($post){
-    if (isset($_SESSION['mode'])== 1){
-        checkvalue($post);
-        require "views/view_answerguidedmode.php";
-    } elseif (isset($_SESSION['mode'])== 2) {
-        checkvalue($post);
-        require "views/view_answerfivesecondsmode.php";
+
+//when the user is playing guided mode
+function playingguidedmode(){
+    $_SESSION['Ncalculation']+=1;
+    if ($_SESSION['Ncalculation']<=2){
+        $alea=rand(1,12);
+        $_SESSION['result']=$_SESSION['number'] * $alea;
+        $_SESSION['calculation']=$_SESSION['number']." * ".$alea." = _____";
+        require "views/view_playguidedmode.php";
+    } else {
+        require "views/view_endgame.php";
     }
-    function checkvalue($post){
+
+}
+
+function checkanswer($post){
+    if (isset($_SESSION['mode'])==1){
         if($_SESSION['result']==$post['answer']){
-            $_SESSION['message']="Bravo";
+            $_SESSION['answer']=$_SESSION['result'];
+            $_SESSION['message']="Bravo, tu as la bonne réponse";
         } else {
-            $_SESSION['message']="Bravo";
+            $_SESSION['answer']=$post['answer'];
+            $_SESSION['message']="Dommage tu n'as pas la bonne réponse, ".$_SESSION['result']." était la bonne réponse.";
         }
+        require "views/view_answerguidedmode.php";
+    } elseif (isset($_SESSION['mode'])==2) {
+        require "views/view_answerfivesecondsmode.php";
+    } else {
+        require "views/view_home.php";
     }
 }
+
 //----------------------------------- Errors -----------------------------------\\
 function error($e)
 {
