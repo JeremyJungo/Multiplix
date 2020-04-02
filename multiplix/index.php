@@ -54,6 +54,9 @@ try{
             case 'checkanswer':
                 checkanswer($_POST);
                 break;
+            case 'endgame':
+                endgame();
+                break;
 //-------------- - -----------------\\
             default :
                 throw new Exception("action non valide");

@@ -13,10 +13,10 @@ $titre="Multiplix";
             <br>
             <a href="index.php?action=overallStatistics"><label>Statistiques</label></a>
             <br>
-            <a href="index.php?action=goHome"><input type="button" value="X"></a>
+            <a href="index.php?action=endgame"><input type="button" value="X"></a>
         </div>
         <div>
-
+            <label>Afficher les statistiques de la partie</label>
         </div>
     </article>
 <?php

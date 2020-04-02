@@ -5,6 +5,9 @@
  * modele.php :
  */
 // getBD : connexion with the serveur DB
+/*
+ * Inspired by Pascal Benzonana
+*/
 function getDB()
 {
     $tempDbConnexion = null;
@@ -29,10 +32,9 @@ function getDB()
 
 // Get login
 /*
-* This function is designed to execute a query received as parameter
-* @param $query : must be correctly build for sql (synthaxis) but the protection against sql injection will be done there
-* @return array|null : get the query result (can be null)
-* Source : http://php.net/manual/en/pdo.prepare.php
+ * Inspired by Pascal Benzonana and the source http://php.net/manual/en/pdo.prepare.php
+ * @param : $post
+ * @return the username
 */
 function getLogin ($post){
     $queryResult = null;
@@ -52,8 +54,9 @@ function getLogin ($post){
 
 // Enter a new user
 /*
+ * Inspired by Pascal Benzonana
 * This function is designed to insert value in database
-* @param $query
+* @param $post
 * @return bool|null : $statement->execute() returne true is the insert was successful
 */
 function newregister($post){

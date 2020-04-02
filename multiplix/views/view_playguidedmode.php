@@ -17,7 +17,7 @@ $titre="Multiplix";
         <a href="index.php?action=goHome"><input type="button" value="X"></a>
     </div>
     <div>
-        <input type="text" value="<?=$_SESSION['calculation']; ?>">
+        <input type="text" value="<?=$_SESSION['calculationMessage']; ?>">
     </div>
     <div>
         <form action="index.php?action=checkanswer" method="post">
